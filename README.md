@@ -1,5 +1,5 @@
 # ESE342-Envelope-Detector
-A Project for Stony Brook University's ESE 342: Communication Systems. We created an Envelope Detector!
+The second project for Stony Brook University's ESE 342: Communication Systems. We created an Envelope Detector!
 
 To see the final report, check out the PDF file in the root repository.
 
