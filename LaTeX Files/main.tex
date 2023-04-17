@@ -1,0 +1,55 @@
+% Author - Jon Arnt Kårstad, NTNU IMT
+\documentclass{article}
+
+% Importing document settings from our file "packages.sty"
+\usepackage{packages}
+
+% Beginning of document
+\begin{document}
+
+% Inserting title page
+\import{./}{title}
+
+% Defining front matter settings (Norsk: innstillinger for forord m.m.)
+\frontmatter
+
+% Inserting table of contents
+\tableofcontents
+
+% Inserting list of figures & list of tables
+\listoffigures
+
+% Defining main matter settings (Norsk: innstillinger for hoveddelen av teksten)
+\mainmatter
+
+\import{./Sections/}{Assignment}
+
+% Introduction explaining this LaTeX-template
+\import{./Sections/}{Introduction}
+
+\import{./Sections/}{Theory}
+
+% Example section added from an external tex-file, here located in ./Sections/
+\import{./Sections/}{Diode}
+
+\import{./Sections/}{DC Bias}
+
+\import{./Sections/}{Peak Detector}
+
+\import{./Sections/}{High Pass}
+
+\import{./Sections/}{Simulation}
+
+\import{./Sections/}{Conclusion}
+
+\nocite{*} 
+% Printing bibliography
+\newpage
+\printbibliography[heading = bibintoc, title = Bibliography]    % 'bibintoc' inserts our bibliography into the table of contents
+
+% Inserting appendix with separate settings
+\addappendix
+\import{./Appendices/}{example_appendix}
+
+% End of document
+\end{document}

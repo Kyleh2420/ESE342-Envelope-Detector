@@ -1,0 +1,7 @@
+\section{Peak Detector}
+
+Once the signal has passed through the diode and rectified, we now need to detect the peaks of the oncoming signal. At a fundamental level, the RC circuit charges and discharges. When charging the RC circuit, it follows the rectified waveform since the waveform is increasing voltage at an extremely fast rate. However, when the peak is met, the RC circuit can no longer follow the waveform. The RC circuit starts to discharge at a rate slower than the waveform. Imagine walking off a cliff: you will be falling at a steady rate, but the cliff side has a sharp decline. Therefore, the RC circuit will keep discharging steadily until the waveform comes back up, essentially charging the RC circuit up again.
+
+This poses a question: how can we adjust our RC values to not discharge so much as to make the wave distorted, but also make sure we discharge enough to keep track of any decline in peaks of the waveform?
+
+Earlier in Theory, Equation \ref{(20)}, we derived the maximum and minimum RC value for peak detection. Given a chosen capacitance, we end up with a range of resistor values to pick from. In practice, we have chosen 75k$\Omega$ to be the resistance, with it being almost halfway between the two bounds, as well as being a known resistor value. 

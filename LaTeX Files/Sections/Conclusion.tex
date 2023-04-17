@@ -1,0 +1,16 @@
+\section{Conclusion}
+
+\subsection{Errors}
+
+    \subsubsection{18kHz}
+        Upon playing the audio file, one could immediately tell that the output is distorted. There is a very audible hum, which we've identified as an 18kHz sine wave, probably a remnant from the peak detector. 
+    \subsubsection{Distortion}
+        When comparing the output wave to the original, we hear a nicely recovered audio sample. However, unsurprisingly, some information was lost after diode and peak detection. The diode cuts off half of the waveform. Seeing that audio files aren't totally symmetrical, theoretically we should not see a perfect copy of the wave after the rectification. On top of this, peak detection introduces a "jaggedness" of the demodulated waveform due to the RC circuit. This error is very subtle and requires a spectrum analyzer to be able to visually see the differences. On the other hand, there was also an addition of very low frequencies ranging from 20Hz to 58Hz in the output waveform. This is common in every audio file given to the simulation.
+        However, we argue that this is due to the inherent nature of AM radio, which due to lower frequency usage, is susceptible to interference from weather, physical structures, or other electrical devices. Additionally only 5kHz of bandwidth is allocated to AM radio, meaning a faithful representation of sound is not possible. Thus, we have simulated real life.
+
+        
+\vspace{1cm}
+        
+        
+        
+\textit{It's a feature, not a bug!!!} -  Unknown

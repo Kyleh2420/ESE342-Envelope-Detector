@@ -1,0 +1,18 @@
+\section{High-Pass Filter}
+    In practice, a high-pass filter may be needed to filter out DC components of the output waveform. However for our simulation, it had little to no distortion due to the DC Bias. Therefore, the circuit has no high-pass component. 
+    
+    However, it would be rude to flirt with your curiosity, so we will calculate a theoretical high-pass filter.
+    Unless you are an elephant reading this, the lowest frequency that we can hear is 20Hz 
+\begin{equation*}
+    f=\frac{1}{2\pi RC}, \ \ f=20Hz, C=0.047\mu F
+\end{equation*}
+\begin{equation*}
+    \frac{1}{R} = 2\pi fC \\
+\end{equation*}
+\begin{equation*}
+    R = \frac{1}{2\pi fC} \\
+\end{equation*}
+\begin{equation*}
+    R = 169k\Omega  \\
+\end{equation*}
+Looking up the known resistor values, we can use 180k$\Omega$ resistor to obtain a slightly lower frequency threshold since we don't want to filter too much of the output waveform.

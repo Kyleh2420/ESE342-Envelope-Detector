@@ -1,0 +1,88 @@
+\section{Theory} \label{Theory}
+
+In this section, we will calculate the RC value of the parallel resistor and capacitor configuration
+
+The envelope can be defined as
+\begin{equation}
+    e_c(t)=A_c(1+\mu cos(\omega_mt))
+\end{equation}
+where $A_c$ is the carrier amplitude, $\mu$ is the modulation index, and $\omega_m$ is the angular frequency of the modulated signal
+
+The voltage of the RC circuit is given as
+\begin{equation}
+    v_c(t)=V_0e^{-\frac{t}{RC}}
+\end{equation}
+
+Looking at this qualitatively, we know that the voltage of the RC circuit will follow the diode whenever it is on the rise. When the diode reaches a peak, it will then drop. However, the RC circuit doesn't allow for this drop to be so sudden. The voltage will actually follow the RC circuit's discharge until the diode is on the rise again, meeting the voltage requirement of the RC circuit to charge up.
+Therefore, we can assume the following
+\begin{equation}
+    A_c(1+\mu cos(\omega_mt))>=V_0e^{-\frac{t}{RC}}
+\end{equation}
+since the ideal envelope would be a smooth curve that conveniently touches all peaks, we know that the voltage of the RC circuit will be less than the ideal envelope
+This is also true for the slope of the ideal and practical envelope. We can utilize algebraic techniques through derivatives to derive RC
+Using (4), we can obtain the following by taking the derivatives on both sides
+\begin{equation}
+    [\frac{d}{dt}]A_c(1+\mu cos(\omega_mt))\geq[\frac{d}{dt}]V_0e^{-\frac{t}{RC}}
+\end{equation}
+\begin{equation}
+    -A_c\mu\omega_m\sin{\omega_mt}\geq-\frac{1}{RC}V_0e^{-\frac{t}{RC}}
+\end{equation}
+Realize that when we took the derivative of the exponential, it comes in the form of the coefficient times the original function.
+\begin{equation}
+    \frac{\mu\omega_m\sin{\omega_mt}}{1+\mu\cos{\omega_mt}}\leq\frac{1}{RC}
+\end{equation}
+Now, when we look at the numerator and denominator of the left hand side, we have to somehow find expressions for our trigonometric functions since they don't provide stable values for RC. To have a clue on the next procedure, we should start with trying to derive each trigonometric function as a linear expression. Seeing that oftentimes it is easier to derive when knowing an equation equals 0, we should take the derivative of both sides yet again.
+\begin{equation}
+    \frac{(1+\mu\cos{\omega_mt})(\mu\omega_m^2\cos{\omega_mt})-(\mu\omega_m\sin{\omega_mt)(-\mu\omega_m\sin{\omega_mt})}}{(1+\mu\cos{\omega_mt})^2}\leq0
+\end{equation}
+When taking derivations, we will analyze in the absolute maximum rating
+Taking equation (8),
+\begin{equation}
+    (1+\mu\cos{\omega_mt})(\mu\omega_m^2\cos{\omega_mt})-(\mu\omega_m\sin{\omega_mt)(-\mu\omega_m\sin(\omega_mt)}=0
+\end{equation}
+\begin{equation}
+    (\mu\omega_m^2\cos{\omega_mt}+\mu^2\omega_m^2\cos{\omega_mt})+\mu^2\omega_m^2\sin^2{\omega_mt}=0
+\end{equation}
+\begin{equation}
+    \cos{\omega_mt}+\mu=0
+\end{equation}
+\begin{equation}
+    \cos{\omega_mt}=-\mu
+\end{equation}
+By virtue of the trig identity
+\begin{equation}
+    \sin{t}=\sqrt{1-\cos^2{t}}
+\end{equation}
+\begin{equation}
+    \sin{\omega_mt}=\sqrt{1-\cos^2{\omega_mt}}
+\end{equation}
+\begin{equation}
+    \sin{\omega_mt}=\sqrt{1-\mu^2}
+\end{equation}
+From equation (7), we will also look at the absolute maximum
+\begin{equation}
+    \frac{1+\mu\cos{\omega_mt}}{\mu\omega_m\sin{\omega_mt}}=RC
+\end{equation}
+\begin{equation}
+    \frac{1-\mu^2}{\mu\omega_m\sqrt{1-\mu^2}}=RC
+\end{equation}
+\begin{equation}
+    \frac{\sqrt{1-\mu^2}}{\mu\omega_m}=RC
+\end{equation}
+This is the absolute maximum, so we amend it
+\begin{equation}
+    \frac{\sqrt{1-\mu^2}}{\mu\omega_m}\geq RC
+\end{equation}
+Since modulation index is given, we just need $\omega_m$. Since we're working with audio files, the highest frequency we'll hear is 20kHz. We choose a high frequency because it will give us a more constrained bound. Choosing a more constrained bound will allow us to apply it to all other modulated angular frequencies at lower frequencies. Therefore, by substituting $\omega_m$ with 20kHz, we get a RC value of 159 $\mu$s. When we choose a common capacitance of 1 $\mu$s, resistance must be at most 150$\Omega$ since it is the closest resistor to 159$\Omega$.
+
+Looking at the boundary for the RC circuit, we are given
+\begin{equation}
+    \frac{1}{\omega_c}\leq RC\leq \frac{\sqrt{1-\mu^2}}{\mu\omega_m}
+    \label{(20)}
+\end{equation}
+Where we are given the carrier frequency $\omega_c$=98.6kHz. Since we set capacitance to be 1nF, our resistance value must be above 10$k\Omega$.
+
+Finally, we have the equation
+\begin{equation}
+    10k\Omega \leq R \leq 150k\Omega ,\ \ \ \ C=1nF
+\end{equation}

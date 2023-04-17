@@ -1,0 +1,5 @@
+\section{DC Bias}
+
+Because our input signal, measured in $\mu$V is below the minimum turn on voltage of a diode, we must bias the midpoint of the signal by at least 0.7V, which will be dropped in the diode. Thus, we can ensure enough voltage for the upper half of the waveform to pass though. 
+
+The resistances chosen for R2 and R1 are 100,000$\Omega$ and 100,000$\Omega$, respectively to create a voltage divider resulting in 1V from a supply rail of 2V. High values were used because a voltage bias was necessary, but a large current, and therefore power waste, was not.
